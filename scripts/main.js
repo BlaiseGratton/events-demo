@@ -51,17 +51,27 @@ const writeToContainerElement = (content) => {
 
 
 const handleClickEvent = (event) => {
-  console.log(event.currentTarget.textContent)
+  document.body.style.backgroundColor = 'blue'
 }
 
+//document.addEventListener('click', handleClickEvent)
+
+//document.addEventListener('contextmenu', event => {
+//})
+
+document.addEventListener('dblclick', event => {
+  if (event.target.tagName.toLowerCase() === 'button') {
+    document.body.style.backgroundColor = 'pink'
+  } else {
+    document.body.style.backgroundColor = 'green'
+  }
+})
 
 const buttons = document.querySelectorAll('button')
-
 
 for (const button of buttons) {
   button.addEventListener('click', handleClickEvent)
 }
-
 
 /*
 document.addEventListener('mousemove', event => {
